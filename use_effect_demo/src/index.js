@@ -21,9 +21,9 @@ return (
         <img src={data.avatar_url} width='350'/>
         </td>
         <td>
-        <h1>Name: {data.name}</h1>
-        <h3>UserName: {data.login}</h3>
-        <a href={data.html_url}> GitHub Profile </a>
+        <h1>{data.name}</h1>
+        <p>Passionate and innovative web-developer with a flair for creating impactful UI/UX solutions. My goal is to create elegant designs, websites, and applications in the least amount of time, to help maximize profits for a successful client.</p>
+        <a href={data.html_url} className="btn btn-primary"> GitHub Profile </a>
         </td>
       </tr>
     </table>
