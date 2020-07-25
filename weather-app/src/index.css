@@ -63,8 +63,8 @@ main{
 /* Location */
 .location-box .location{
   color: #fff;
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 48px;
+  font-weight: 600;
   text-align: center;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
