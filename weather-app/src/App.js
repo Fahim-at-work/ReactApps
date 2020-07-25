@@ -10,9 +10,9 @@ function App() {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
 
-  const search = evt =>{
-    if(evt.hey === 'Enter'){
-      fetch(`${api.base}weather?=${query}&units=metric$APPID=${api.key}`)
+  const search = evt => {
+    if(evt.key === 'Enter'){
+      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
       .then(res => res.json())
       .then(result => {
       setWeather(result)
@@ -34,7 +34,11 @@ const dateBuilder = (d) => {
 }
 
   return (
-    <div className="app">
+    <div className={(typeof weather.main != 'undefined') ? 
+    ((weather.main.temp > 20)? 
+    'app-warm'
+    : 'app')
+    : 'app'}>
       <main>
         <div className='search-box'>
         <input type='text'
@@ -56,9 +60,9 @@ const dateBuilder = (d) => {
             </div>
             <div className='weather-box'>
               <div className='temp'>
-                {Math.round(weather.main.temp)} °C
+                {Math.round(weather.main.temp)}°C
               </div>
-              <div className='weather'>Sunny</div>
+              <div className='weather'>{weather.weather[0].main}</div>
             </div>
           </div>
         ): ('')}
